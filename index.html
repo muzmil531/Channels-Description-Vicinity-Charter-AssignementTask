@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>News Channel</title>
+    <link href="https://fonts.googleapis.com/css?family=Russo+One&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <header>
+        <h1>News Channels</h1>
+    </header>
+    <div class="search-nav">
+            <input placeholder="Search here" type="text" id="search" onkeyup="myFunction()">
+        </div>
+    <ul id="myUL">
+       
+        <div class="parent-cards">
+            <li>
+            <div class="child-cards" id="abcNews">
+                <img src="img/abc-news.png" alt="ABC-News Logo" class="img-thumbnail">
+                <h2>ABC News</h2>
+                <a href="./channels/abc.html"><button type="button" class="btn btn-danger">Click Here</button></a>
+            </div>
+            </li>
+            <li><div class="child-cards" itemref="afterposten">
+                <img src="img/aftenposten.png" alt="aftenposten logo" class="img-thumbnail">
+                <h2>AfterPosten</h2>
+                <a href="./channels/afterposten.html"><button type="button" class="btn btn-danger">Click Here</button></a>
+            </div></li>
+            <li><div class="child-cards" id="Al-Jazeera">
+                <img src="img/Al-Jazeera_english.png" alt="Al-Jazeera_english logo" class="img-thumbnail">
+                <h2>Al-Jazeera English</h2>
+                <a href="./channels/al-jazeera.html"><button type="button" class="btn btn-danger">Click Here</button></a>
+            </div></li>
+            <li><div class="child-cards" id="Ary-news">
+                <img src="img/Ary-News.png" alt="Ary-News logo" class="img-thumbnail">
+                <h2>Ary-News</h2>
+                <a href="./channels/arynews.html"><button type="button" class="btn btn-danger">Click Here</button></a>
+            </div></li>
+            <li><div class="child-cards" id="ars-technica">
+                <img src="img/Ars-Technica.png" alt="Ars-Technica logo" class="img-thumbnail">
+                <h2>Ars-Technica</h2>
+                <a href="./channels/ars-technica.html"><button type="button" class="btn btn-danger">Click Here</button></a>
+            </div></li>
+            <li><div class="child-cards" id="Associated-Press">
+                <img src="img/Associated-Press.png" alt="Associated-Press logo" class="img-thumbnail">
+                <h2>Associated-Press</h2>
+                <a href="./channels/Associated-Press.html"><button type="button" class="btn btn-danger">Click Here</button></a>
+            </div></li>
+            <li><div class="child-cards" id="Axios">
+                <img src="img/Axios.png" alt="Axios logo" class="img-thumbnail">
+                <h2>Axios</h2>
+                <a href="./channels/axios.html"><button type="button" class="btn btn-danger">Click Here</button></a>
+            </div></li>
+            <li><div class="child-cards" id="Ansa.it">
+                <img src="img/BBC-News.png" alt="Ansa.it logo" class="img-thumbnail">
+                <h2>ANSA.it-News</h2>
+                <a href="./channels/ansa-it.html"><button type="button" class="btn btn-danger">Click Here</button></a>
+            </div></li>
+            <li><div class="child-cards" id="ABN">
+                <img src="img/ABN-News.jpg" alt="ABN-News logo" class="img-thumbnail">
+                <h2>ABN News</h2>
+                <a href="./channels/abn.html"><button type="button" class="btn btn-danger">Click Here</button></a>
+            </div></li>
+        </div>
+    </ul>
+</body>
+</html>
+
+<script>
+function myFunction() {
+  // Declare variables
+  var input, filter, ul, li, a, i, txtValue;
+  input = document.getElementById('search');
+  filter = input.value.toUpperCase();
+  ul = document.getElementById("myUL");
+  li = ul.getElementsByTagName('li');
+
+  // Loop through all list items, and hide those who don't match the search query
+  for (i = 0; i < li.length; i++) {
+    a = li[i].getElementsByTagName("h2")[0];
+    txtValue = a.textContent || a.innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      li[i].style.display = "";
+    } else {
+      li[i].style.display = "none";
+    }
+  }
+}
+
+</script>
